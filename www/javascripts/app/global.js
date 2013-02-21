@@ -55,10 +55,11 @@ define(function (require, exports, module) {
 		},
 
 		/**
-		 * Use this function to bind tracking against any custom event
-		 * triggered against the global Event object.
-		 -     * @method App.bindMediaQueries
-		 -     */
+		 * Use this function to bind to media queries
+		 * on window.resize. Read more @
+		 * http://wicky.nillia.ms/enquire.js/#basics
+		 * @method App.bindMediaQueries
+		 */
 		'bindMediaQueries': function () {
 			enquire.register('screen and (max-width:768px)', [{
 				'match': function () {
