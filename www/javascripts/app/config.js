@@ -40,7 +40,8 @@
 			//http://backbonejs.org/
 			'swig': 'lib/swig.min',
 			//http://paularmstrong.github.com/swig/docs/
-
+			'enquire': 'lib/enquire.min',
+			//http://wicky.nillia.ms/enquire.js/#basics
 			// Backbone Submodule Directories
 			'router': 'app/router',
 			'model': 'app/model',
@@ -78,6 +79,10 @@
 			'swig': {
 				'deps': ['underscore'],
 				'exports': 'swig'
+			},
+
+			'enquire': {
+				'exports': 'enquire'
 			},
 
 			'facebook': {

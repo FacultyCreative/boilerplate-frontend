@@ -11,6 +11,7 @@ define(function (require, exports, module) {
 		Modernizr = require('modernizr'),
 		Backbone = require('backbone'),
 		Swig = require('swig'),
+		Enquirejs = require('enquire'),
 		Analytics = require('helpers/analytics'),
 		Utilities = require('helpers/utilities'),
 		App = require('app/index'),
@@ -40,6 +41,7 @@ define(function (require, exports, module) {
 			}).pageTrack('/index');
 
 			App.bindCustomEvents();
+			App.bindMediaQueries();
 
 			App.cache.routers.appRouter = new App.routers.AppRouter();
 			Backbone.history.start();
@@ -52,6 +54,20 @@ define(function (require, exports, module) {
 			return this;
 		},
 
+		/**
+		 * Use this function to bind tracking against any custom event
+		 * triggered against the global Event object.
+		 -     * @method App.bindMediaQueries
+		 -     */
+		'bindMediaQueries': function () {
+			enquire.register('screen and (max-width:768px)', [{
+				'match': function () {
+					if(Utilities.isIpad()) {
+						//if isIpad
+					}
+				}
+			}]).listen();
+		},
 		/**
 		 * Use this function to bind tracking against any custom event
 		 * triggered against the global Event object.
